@@ -525,6 +525,45 @@ img {
     }
 
 }
+  .nl-form{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.nl-form input{
+    flex:1;
+    min-width:0;
+}
+
+.nl-form button{
+    white-space:nowrap;
+}
+
+/* Mobile Responsive */
+@media(max-width:640px){
+
+    .nl-wrap{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+
+    .nl-form{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .nl-form input,
+    .nl-form button{
+        width:100%;
+        height:50px;
+    }
+
+    .nl-form button{
+        margin-top:5px;
+    }
+}
 </style>
 </head>
 <body>
