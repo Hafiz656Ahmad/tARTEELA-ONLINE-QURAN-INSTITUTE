@@ -564,14 +564,37 @@ img {
         margin-top:5px;
     }
 }
+  @media(max-width:900px){
+
+.nav-links{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#07271d;
+    flex-direction:column;
+    padding:25px;
+    gap:20px;
+}
+
+.nav-links.active{
+    display:flex;
+}
+
+}
+  header{
+    position:relative;
+}
 </style>
 </head>
 <body>
 
 <header>
+  <nav class="nav-links">
   <div class="nav">
     <a href="#" class="logo"><span class="mark"><img src="Tarteela_20260621_144115_0001__1_-removebg-preview.png" alt=""></span> Tarteela</a>
-    <nav class="nav-links">
+   <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About Us</a>
       <a href="#courses">Courses</a>
@@ -583,7 +606,7 @@ img {
     </nav>
     <div class="nav-cta">
       <a href="#contact" class="btn btn-gold">Book Free Trial</a>
-      <button class="menu-btn">☰</button>
+     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     </div>
   </div>
 </header>
@@ -857,11 +880,12 @@ Instagram
 
 </body>
 <script>
-  <script>
+
 function toggleMenu(){
     document.getElementById("navLinks").classList.toggle("active");
 }
-</script>
+
+
 function sendToWhatsApp() {
 
     var name = document.getElementById("name").value;
@@ -871,13 +895,15 @@ function sendToWhatsApp() {
     var phone = "923376058504"; 
 
     var text =
-    "📖 Tarteela Online Quran Institute%0A%0A" +
-    "👤 Name: " + name + "%0A" +
-    "📧 Email: " + email + "%0A" +
+    "📖 Tarteela Online Quran Institute\n\n" +
+    "👤 Name: " + name + "\n" +
+    "📧 Email: " + email + "\n" +
     "💬 Message: " + message;
 
-    window.open("https://wa.me/" + phone + "?text=" + text, "_blank");
+
+    window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(text), "_blank");
 
 }
+
 </script>
 </html>
